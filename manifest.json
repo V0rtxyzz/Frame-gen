@@ -1,0 +1,13 @@
+{
+  "type": "preload-native",
+  "name": "Hyper90 FPS Booster",
+  "description": "13-Module Native 90 FPS Engine & Optimizer Suite (with experimental Frame Blend) for Minecraft Bedrock on LeviLaunchroid.",
+  "author": "okid",
+  "version": "1.1.0",
+  "entry": "libhyper90_fps_booster.so",
+  "minecraft_versions": [],
+  "overwrite_files": [
+    "config/config.schema.json"
+  ],
+  "overwrite_folders": []
+}
