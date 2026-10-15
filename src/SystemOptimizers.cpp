@@ -239,10 +239,16 @@ bool MemoryArenaOptimizer::applyBionicHeapTuning() noexcept {
         return false;
     }
 
-    // Android Bionic M_DECAY_TIME = -100, M_PURGE = -101
+    // Android Bionic M_DECAY_TIME = -100.
+    // Scudo (the default allocator since Android 11) only accepts -1, 0 or 1 here and ABORTS the
+    // whole process on any other value (CHECK failed @ wrappers_c.inc: value >= -1 && value <= 1).
+    // 0 = release freed memory to the OS immediately, 1 = delayed release (keeps freed chunks
+    // cached, which is what "heap retain" wants). So any configured decay time > 0 maps to 1.
     constexpr int kBionicMDecayTime = -100;
+    constexpr int kScudoDecayDelayed = 1;
     const int decayMs = std::clamp(cfg.heapDecayTimeMs.load(std::memory_order_relaxed), 1000, 60000);
-    return fn(kBionicMDecayTime, decayMs) != 0;
+    const int scudoValue = (decayMs > 0) ? kScudoDecayDelayed : 0;
+    return fn(kBionicMDecayTime, scudoValue) != 0;
 }
 
 bool MemoryArenaOptimizer::lockHotMemoryPages() noexcept {
