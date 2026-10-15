@@ -23,12 +23,14 @@ if(ANDROID)
     FetchContent_Declare(
         preloader
         GIT_REPOSITORY https://github.com/LiteLDev/preloader-android.git
-        GIT_TAG 0.2.2
+        # Hyper90 uses ConfigType::Button and the HUD editor API, which are
+        # not present in the pinned 0.2.2/0.2.3 release headers.
+        GIT_TAG main
     )
     FetchContent_MakeAvailable(preloader)
 
-    # The link target name differs between preloader-android versions
-    # ("preloader::preloader" is not defined by tag 0.2.2), so detect it.
+    # The link target name can differ between preloader-android revisions,
+    # so detect it rather than assuming a single target name.
     set(HYPER90_PRELOADER_TARGET "")
     foreach(_candidate preloader::preloader preloader preloader_android preloader-android)
         if(TARGET ${_candidate})
