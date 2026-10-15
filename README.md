@@ -52,4 +52,4 @@ Every module registers individually in **LeviLaunchroid's in-game Mod Menu**, su
 ```bash
 ./build.sh
 ```
-The Android build fetches the `main` branch of `preloader-android` because Hyper90 uses the newer `ConfigType::Button` and HUD editor APIs, which are not included in release 0.2.2/0.2.3. The script compiles the Android `arm64-v8a` shared library (`release/libhyper90_fps_booster.so`) and packages `Hyper90FPSBooster.levipack`. The host verification suite and config regeneration run when the optional local dependency headers are available under `/tmp/ref` and `/tmp/tools`.
+This compiles and runs the host verification test suite (`tests/test_hyper90.cpp`) verifying all 13 modules, regenerates `config/config.json` and `config/config.schema.json`, compiles the Android `arm64-v8a` shared library (`release/libhyper90_fps_booster.so`), and packages `Hyper90FPSBooster.levipack`.
