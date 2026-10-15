@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Configuration schema for all 13 native 90-FPS optimization modules.",
+  "properties": {
+    "adaptive_governor_hud": {
+      "type": "object"
+    },
+    "camera_input_90hz": {
+      "type": "object"
+    },
+    "cpu_scheduler": {
+      "type": "object"
+    },
+    "draw_batch_culler": {
+      "type": "object"
+    },
+    "engine_options": {
+      "type": "object"
+    },
+    "entity_particle_guard": {
+      "type": "object"
+    },
+    "frame_blend": {
+      "type": "object"
+    },
+    "frame_pacer": {
+      "type": "object"
+    },
+    "gl_pipeline": {
+      "type": "object"
+    },
+    "hud_ui_accelerator": {
+      "type": "object"
+    },
+    "memory_arena_tuner": {
+      "type": "object"
+    },
+    "tbdr_tile_saver": {
+      "type": "object"
+    },
+    "texture_lod": {
+      "type": "object"
+    },
+    "version": {
+      "default": 1,
+      "type": "integer"
+    }
+  },
+  "title": "Hyper90 FPS Booster Configuration",
+  "type": "object"
+}

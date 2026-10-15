@@ -1,0 +1,97 @@
+{
+  "adaptive_governor_hud": {
+    "accent_color": "#00FF88",
+    "adaptive_90_governor": true,
+    "enabled": true,
+    "hud_pos_x": 16.0,
+    "hud_pos_y": 16.0,
+    "hud_style": 1,
+    "show_fps_hud": true,
+    "ultra_boost_override": false
+  },
+  "camera_input_90hz": {
+    "camera_responsiveness": 28.0,
+    "enabled": true,
+    "fullbright_gamma": true,
+    "low_delay_sockets": true,
+    "raw_flick_bypass": true,
+    "smooth_camera_90hz": true
+  },
+  "cpu_scheduler": {
+    "boost_thread_priority": true,
+    "core_selection_mode": 0,
+    "enabled": true,
+    "pin_render_thread": true,
+    "reapply_interval_sec": 5
+  },
+  "draw_batch_culler": {
+    "adaptive_micro_batch_cull": true,
+    "cull_degenerate_draws": true,
+    "cull_trigger_fps": 88,
+    "enabled": true,
+    "micro_batch_max_indices": 18
+  },
+  "engine_options": {
+    "disable_fancy_gfx": true,
+    "disable_msaa_texel_aa": true,
+    "enabled": true,
+    "fast_lighting": true,
+    "fast_skies_clouds": true,
+    "opaque_leaves": true,
+    "view_distance_chunks": 7
+  },
+  "entity_particle_guard": {
+    "enabled": true,
+    "entity_distance_culling": true,
+    "fast_entity_interp": true,
+    "limit_particles": true,
+    "max_entity_distance": 48,
+    "max_particles_per_frame": 180
+  },
+  "frame_blend": {
+    "enabled": false,
+    "mode": 1,
+    "strength_pct": 50
+  },
+  "frame_pacer": {
+    "anti_stutter_guard": true,
+    "enabled": true,
+    "pacing_mode": 2,
+    "target_fps": 90,
+    "vsync_bypass": true
+  },
+  "gl_pipeline": {
+    "dedup_gl_state": true,
+    "disable_dither_msaa": true,
+    "enabled": true,
+    "fastest_shader_hints": true,
+    "suppress_gl_finish": true
+  },
+  "hud_ui_accelerator": {
+    "cache_hotbar_vitals": true,
+    "cache_ui_text": true,
+    "crosshair_size": 10,
+    "disable_ui_animations": true,
+    "enabled": true,
+    "simplify_crosshair": false
+  },
+  "memory_arena_tuner": {
+    "bionic_heap_retain": true,
+    "enabled": true,
+    "heap_decay_time_ms": 15000,
+    "lock_hot_pages": true
+  },
+  "tbdr_tile_saver": {
+    "discard_depth_stencil": true,
+    "enabled": true,
+    "optimize_clear_calls": true
+  },
+  "texture_lod": {
+    "clamp_anisotropy": true,
+    "enabled": true,
+    "fast_mipmap_filter": true,
+    "max_anisotropy": 1,
+    "max_mip_level": 4
+  },
+  "version": 1
+}

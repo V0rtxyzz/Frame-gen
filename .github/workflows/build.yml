@@ -1,0 +1,37 @@
+name: Build Hyper90 FPS Booster (.levipack)
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "*" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Android NDK
+        uses: nttld/setup-ndk@v1
+        id: setup-ndk
+        with:
+          ndk-version: r26d
+          add-to-path: true
+
+      - name: Build & Package .levipack
+        env:
+          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
+        run: |
+          chmod +x ./build.sh
+          ./build.sh
+
+      - name: Upload Hyper90FPSBooster.levipack Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Hyper90FPSBooster-levipack
+          path: |
+            Hyper90FPSBooster.levipack
+            release/libhyper90_fps_booster.so
