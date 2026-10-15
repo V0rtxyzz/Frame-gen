@@ -2,11 +2,6 @@ name: Build Hyper90 FPS Booster (.levipack)
 
 on:
   push:
-    branches: [ "*" ]
-  pull_request:
-    branches: [ "*" ]
-  workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
